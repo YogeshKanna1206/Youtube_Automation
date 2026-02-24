@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# Environment variables
+.env
+
+# Generated output files
+output/
+*.mp4
+*.mp3
+*.wav
+
+# Logs
+*.log
