@@ -1,5 +1,7 @@
 🚀 AI YouTube Automation Engine
 
+<img width="2816" height="1536" alt="Gemini_Generated_Image_z9mdqiz9mdqiz9md" src="https://github.com/user-attachments/assets/7f8fd863-eb73-4edd-a176-ed2e84ca6027" />
+
 An end-to-end AI-powered YouTube content automation system that:
 
     🧠 Generates scripts using LLaMA (Ollama API)
