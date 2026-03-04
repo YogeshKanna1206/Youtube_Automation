@@ -1,30 +1,57 @@
 import requests
 import re
-from tts_generator import text_to_speech
+import random
+import os
+def generate_script():
+    # Pick random tool
 
-def generate_script(topic: str):
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    tools_path = os.path.join(base_dir, "tools.txt")
+
+    with open(tools_path, "r", encoding="utf-8") as f:
+        tools = [line.strip() for line in f if line.strip()]
+
+    topic = random.choice(tools)
+
     prompt = f"""
-    Generate a YouTube video script.
+    You are a professional YouTube Shorts scriptwriter.
 
-    Topic: {topic}
+    Generate a high-energy, clean voiceover script for a YouTube Shorts video.
 
-    Requirements:
-    - Duration: 2 minutes
-    - Engaging intro
-    - Clear explanation
-    - Simple language
-    - Strong call-to-action at the end
+    Topic: AI Tool Spotlight - {topic}
 
-    Format EXACTLY like this:
+    STRICT RULES:
+    - This is a voiceover script only.
+    - Do NOT include timestamps.
+    - Do NOT include Host:, Narrator:, Scene:, Background:, Music:, or any stage directions.
+    - Do NOT include brackets like [ ] or ( ).
+    - Do NOT describe visuals.
+    - Do NOT include camera instructions.
+    - Do NOT include formatting sections inside the script.
+    - The SCRIPT must contain ONLY spoken narration text.
+    - Write in short, punchy sentences.
+    - Make it sound modern and exciting.
+    - Optimized for TikTok / Reels style delivery.
+
+    Content Requirements:
+    - 60–90 seconds length
+    - Start with a strong hook in the first sentence
+    - Clearly explain what the tool does
+    - Mention who it helps
+    - Include 2–3 practical real-world use cases
+    - End with a strong call-to-action
+
+    Return EXACTLY in this format:
 
     TITLE:
-    <title here>
+    <short viral title>
 
     SCRIPT:
-    <script here>
+    <voiceover narration only, plain paragraph text>
 
     DESCRIPTION:
-    <description here>
+    <SEO friendly description with hashtags>
     """
 
     response = requests.post(
@@ -48,4 +75,3 @@ def generate_script(topic: str):
         "script": script.group(1).strip() if script else "",
         "description": description.group(1).strip() if description else ""
     }
-
