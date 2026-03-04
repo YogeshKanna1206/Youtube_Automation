@@ -86,14 +86,13 @@ An end-to-end AI-powered YouTube content automation system that:
     Make sure this endpoint works:
     
     http://localhost:11434/api/generate
+<img width="1917" height="968" alt="Screenshot 2026-03-04 053631" src="https://github.com/user-attachments/assets/20988cc0-f7c5-4022-b962-f6c28083030d" />
   🔹 Step 2 — Configure n8n
 
     Install and run n8n:
     
     n8n
     
-    <img width="1917" height="968" alt="Screenshot 2026-03-04 053631" src="https://github.com/user-attachments/assets/20988cc0-f7c5-4022-b962-f6c28083030d" />
-
     Create a Webhook node:
     
     Method: POST
